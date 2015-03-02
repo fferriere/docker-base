@@ -12,7 +12,7 @@ RUN echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/02apt-speedup
 RUN echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache
 
 RUN apt-get update -y && \
-    apt-get install -y locales net-tools procps acl curl vim --no-install-recommends
+    apt-get install -y locales net-tools procps acl curl vim wget --no-install-recommends
 
 RUN echo "Europe/Paris" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata && \
