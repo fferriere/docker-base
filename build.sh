@@ -2,6 +2,9 @@
 
 MY_PATH=$(dirname $(realpath $0))
 
-. $MY_PATH/docker-name.conf
+NAME='fferriere/base'
+if [ -n "$FFERRIERE_BASE_IMAGE" ]; then
+    NAME=$FFERRIERE_BASE_IMAGE
+fi
 
-docker build -t $DOCKER_IMAGE_NAME "$@" $MY_PATH/.
+docker build -t $NAME "$@" $MY_PATH/.
