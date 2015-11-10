@@ -21,4 +21,4 @@ RUN echo "Europe/Paris" > /etc/timezone && \
     locale-gen && \
     update-locale LANG=fr_FR.UTF-8
 
-RUN useradd --uid 1000 --create-home user
+RUN useradd --uid 1000 --create-home -s /bin/bash user
